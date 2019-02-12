@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script>
+	// element를 골라야 하는 시점 1(vanila Javascript)
+	window.onload = function() {
+		console.log("여기서 시작1");
+	}
+	
+	// element를 골라야 하는 시점 2(jquery 사용)
+	var $document = jQuery(document); // 관례상 jquery document 객체를 가리키는 변수는 $를 앞에 적어준다.
+	$document.ready(function() {
+		console.log("여기서 시작2");
+	}); // dom이 모두 로딩 되었을때..
+	//위의 문법과 아래의 문법은 같다.
+	jQuery(document).ready(function() {
+		console.log("여기서 시작2");
+	}); // dom이 모두 로딩 되었을때..
+	
+	// element를 골라야 하는 시점 3(jquery 사용)
+	$(document).ready(function() {
+		console.log("여기서 시작3");
+	}); // dom이 모두 로딩 되었을때..
+	
+	// element를 골라야 하는 시점 4(jquery 사용)
+	//dom이 모두 로딩된 후 사용해 달라는 의미..
+	$(function() {
+		console.log("여기서 시작4");
+	})
+</script>
+</head>
+<body>
+<p>
+    Element를 선택해야 하는 시점
+</p>
+</body>
+</html>
